@@ -1,0 +1,311 @@
+[
+    {
+        "classification": "00 - Rent",
+        "expenses_attributed": [
+            "letus rent       msp",
+            "AMAZON PAY    4.82_V",
+            "Letus Rent       MSP"
+        ]
+    },
+    {
+        "classification": "01 - Order in",
+        "expenses_attributed": [
+            "dd/doordash",
+            "dominos pizza",
+            "uber* eats",
+            "mcdonald's",
+            "mcdonalds"
+        ]
+    },
+    {
+        "classification": "02 - Eat Out",
+        "expenses_attributed": [
+            "yaletown keg",
+            "downlow",
+            "sq *#5990 steve",
+            "the spoke",
+            "tahinis",
+            "bourbon st gril",
+            "barakat",
+            "ajisen ramen",
+            "ozen korea",
+            "ramen misoya",
+            "crepe it up",
+            "hotpot",
+            "happy lamb",
+            "ki isu",
+            "chipotle",
+            "mcdonalds",
+            "rio",
+            "five guys ",
+            "japadog ",
+            "subway ",
+            "chick-fil-a",
+            "hanata sushi",
+            "casereccio food   _m",
+            "browns socialho   _m",
+            "yagoto sushi      _m",
+            "tian shi fu no.   _m",
+            "a w cambie #771   _m",
+            "soonies           _m",
+            "babaz             _m",
+            "shelby's          _m",
+            "bic souvlaki      _m",
+            "sq *the banquet   _m",
+            "prontos pizza     _m",
+            "osmow's           _m",
+            "chucks roadhous   _m",
+            "\"bic souvlaki      _f\"",
+            "\"venice pizza      _m\"",
+            "\"subway 17206      _v\"",
+            "\"sh vending80036   _m\"",
+            "\"a w               _m\"",
+            "\"restaurant samm   _f\"",
+            "\"btrmlk            _m\"",
+            "\"papa john's piz   _m\"",
+            "\"the masonville    _m\"",
+            "",
+            "BARAKAT RESTAUR   _M",
+            "McDonalds 10888   _V",
+            "BABAZ             _M",
+            "PRONTOS PIZZA     _M",
+            "Subway 17206      _V",
+            "MCDONALD'S #291   _M",
+            "SQ *THE CANADIA   _M",
+            "MCDONALD'S #852   _M"
+        ]
+    },
+    {
+        "classification": "03 - House Items",
+        "expenses_attributed": [
+            "amazon.ca",
+            "amzn",
+            "bosley's by pet   _m",
+            "dollarama #1301   _m",
+            "rover.com* pet    _v",
+            "shoppers drug m",
+            "td atm w/d    003029",
+            "urban animal ho     ",
+            "western drug",
+            ""
+        ]
+    },
+    {
+        "classification": "04 - Groceries",
+        "expenses_attributed": [
+            "costco",
+            "grocery checkou",
+            "urban fare",
+            "farm to table",
+            "ic* instacart     _v",
+            "iga",
+            "metro  247        _m",
+            "walmart store #   _m",
+            "\"walmart.ca        _v\"",
+            "\"metro  247        _f\"",
+            "\"chefsplate        _v\"",
+            "METRO  247        _F",
+            "COSTCO WHOLESAL   _M",
+            "SEND E-TFR ***7w6",
+            "IC* INSTACART     _V"
+        ]
+    },
+    {
+        "classification": "05A- Transportation (Personal)",
+        "expenses_attributed": [
+            "uber canada/ube",
+            "black top",
+            "uber* pending",
+            "tlnk",
+            "compass",
+            "uber* trip        _v",
+            "UBER CANADA/UBE   _V",
+            "UBER* PENDING     _V",
+            "UBER* TRIP        _V",
+            "TLNK/0439962695   _T",
+            "TLNK/0439941602   _T"
+        ]
+    },
+    {
+        "classification": "05B - Transportation (Vacation)",
+        "expenses_attributed": [
+            "megabus",
+            "up express",
+            "air can*          _v",
+            "stm namur din10",
+            "\"tom-paul toussa   _m\"",
+            "\"tabagie metro p   _m\"",
+            "\"intercity bus g   _v\"",
+            "MEGABUS CANADA    _V"
+        ]
+    },
+    {
+        "classification": "06 - Snacks",
+        "expenses_attributed": [
+            "tim horton",
+            "freshslice",
+            "tim's",
+            "starbucks",
+            "dairy queen",
+            "upmeals",
+            "coke",
+            "7 eleven",
+            "coq-o-bec         _m",
+            "01383 macs conv   _m",
+            "buck or two plu   _m",
+            "hi ya mini mart   _m",
+            "circle k #69013   _m",
+            "\"jean coutu  285   _m\"",
+            "\"ray's variety     _m\"",
+            "\"einstein's        _m\"",
+            "SEND E-TFR ***ckG   ",
+            "UCC TIM'S UPPER   _M",
+            "YYZ KENSINGTON    _M",
+            "NATURAL TIM'S     _M",
+            "SH VENDING80036   _M",
+            "MCDONALD'S #291   _M",
+            "UCC TIM'S EXPRE   _M",
+            "MCDONALD'S #852   _M",
+            "TIM HORTONS #29   _M"
+        ]
+    },
+    {
+        "classification": "07 - E-transfer out",
+        "expenses_attributed": [
+            "send e-tfr",
+            "hu342 tfr-to 6041995",
+            "\"hi352 tfr-to 6041995\"",
+            "\"ro303 tfr-to 6041995\"",
+            "\"ww304 tfr-to 6041995\"",
+            "SEND E-TFR ***ckG   ",
+            "SEND E-TFR ***GRd   ",
+            "SEND E-TFR ***Gg8",
+            "SEND E-TFR ***4hW",
+            "SEND E-TFR ***sgQ",
+            "SEND E-TFR ***Arp",
+            "SEND E-TFR ***MAf",
+            "SEND E-TFR ***7w6"
+        ]
+    },
+    {
+        "classification": "08 - Wants",
+        "expenses_attributed": [
+            "inspired cannab  ",
+            "king royal vape ",
+            "ls signature va",
+            "ray's variety  ",
+            "\"fanduel canada   ",
+            "\"betmgm            _v\"",
+            "\"union mercado     _m\"",
+            "\"ray's variety     _m\"",
+            "\"holy cannabis     _m\"",
+            ",ray's variety     _m",
+            "KING ROYAL VAPE   _M",
+            "RAY'S VARIETY     _M",
+            "FANDUEL CANADA    _V",
+            "AMZN Mktp CA      _V",
+            "AMAZON PAY    4.82_V",
+            "NIKE FACTORY OU   _M"
+        ]
+    },
+    {
+        "classification": "09 - University Expense",
+        "expenses_attributed": [
+            "the book store",
+            "cengage",
+            "chegg",
+            "coinamatic",
+            "ivey publishing   _v",
+            "prep 101inc       _v",
+            "saugeen maitlan   _m",
+            "western residen",
+            "westernuse.stor",
+            "wts papercu",
+            "WESTERN RESIDEN   _V",
+            "CHEGG  *OR   15.67_V",
+            "WESTERN DRUG MA   _M",
+            "COINAMATIC-291      "
+        ]
+    },
+    {
+        "classification": "10 - Misc",
+        "expenses_attributed": [
+            "level up barber",
+            "\"amazon pay    4.82_v\"",
+            "\"apple store #r4\"",
+            "\"non-td atm w/d\"",
+            "\"other bank fees\"",
+            "\"sq *the canadia   _m\"",
+            "\"yyz kensington    _m\"",
+            "medicine",
+            "other bank fees     ",
+            "poparide          _v",
+            "pts to:  94006041995",
+            "sc passport van   _f",
+            "the ups store #   _m",
+            "usat_te922320     _m",
+            "yaletown expres   _m",
+            "\"ho300 tfr-to 6041995\"",
+            "\"tgtg 1awytwv7ww   _v\"",
+            "\"nader o yonan     _m\"",
+            "\"apple.com/bill    _v\"",
+            "\"holy cannabis     _m\"",
+            "\"nintendo ca1386   _v\"",
+            "LEVEL UP BARBER   _M",
+            "PTS TO:  94006041995",
+            "AMZN Mktp CA      _V",
+            "ROVER.COM* PET    _V"
+        ]
+    },
+    {
+        "classification": "11A - Going Out (Bars)",
+        "expenses_attributed": [
+            "ceeps barneys l   _f",
+            "\"lost love         _m\"",
+            "lcbo/rao #0200    _m",
+            "\"spirit of howe    _m\"",
+            "lake front liqu   _f",
+            "\"la voute          _m\"",
+            "\"eventbrite/cupi   _v\"",
+            "\"eventbrite/mixe   _v\"",
+            "\"ceeps barneys l   _m\"",
+            "SPIRIT OF HOWE    _M",
+            "SPIRIT OF HOWE    _F"
+        ]
+    },
+    {
+        "classification": "11B - Going out (Not Bars)",
+        "expenses_attributed": [
+            "famous player",
+            "non-td atm w/d      ",
+            "tbc indoor raci   _f",
+            "ubc recreation    _m"
+        ]
+    },
+    {
+        "classification": "12 - Subscriptions",
+        "expenses_attributed": [
+            "openai *ch   22.40_v",
+            "spotify p3    6.71_v",
+            "\"spotify p3    7.16_v\"",
+            "\"a w               _m\"",
+            "\"the masonville    _m\"",
+            "Spotify P3    7.16_V",
+            "OPENAI *CH   22.40_V",
+            "Spotify P3    6.71_V",
+            "Amazon.ca Prime   _V",
+            "UBER CANADA/UBE   _V"
+        ]
+    },
+    {
+        "classification": "13 - Fashion",
+        "expenses_attributed": [
+            "\"nike factory ou   _m\"",
+            "UU322 TFR-FR 6041995"
+        ]
+    },
+    {
+        "classification": "14 - Poker",
+        "expenses_attributed": []
+    }
+]

@@ -1,0 +1,67 @@
+[
+    {
+        "classification": "IN: 01 - Pops",
+        "income_attributed": [
+            "E-TRANSFER ***TgM",
+            "IO224 TFR-FR 6041995",
+            "UU322 TFR-FR 6041995",
+            "E-TRANSFER ***uak",
+            "E-TRANSFER ***GC7   "
+        ]
+    },
+    {
+        "classification": "IN: 02 - E-Transfer",
+        "income_attributed": [
+            "E-TRANSFER ***aUg   ",
+            "E-TRANSFER ***JFu   ",
+            "E-TRANSFER ***24n   ",
+            "E-TRANSFER ***dUh",
+            "E-TRANSFER ***uak",
+            "E-TRANSFER ***fEZ",
+            "E-TRANSFER ***eGw",
+            "E-TRANSFER ***8Uu",
+            "E-TRANSFER ***9HE",
+            "E-TRANSFER ***2at",
+            "E-TRANSFER ***R5h",
+            "E-TRANSFER ***uNH",
+            "E-TRANSFER ***8wj",
+            "E-TRANSFER ***sKu",
+            "E-TRANSFER ***ekr",
+            "E-TRANSFER ***PbJ",
+            "E-TRANSFER ***g48",
+            "E-TRANSFER ***wP5",
+            "HC192 TFR-FR 6041995"
+        ]
+    },
+    {
+        "classification": "IN: 03 - Savings",
+        "income_attributed": [
+            "LD544 TFR-FR 6041995",
+            "HC192 TFR-FR 6041995"
+        ]
+    },
+    {
+        "classification": "IN: 04 - Reimbursements",
+        "income_attributed": [
+            "AMZN Mktp CA      _V",
+            "UBER CANADA/UBE   _V",
+            "IC* INST REV 12/12_V",
+            "IC* INST REV 12/13_V",
+            "UBER CAN REV 12/20_V"
+        ]
+    },
+    {
+        "classification": "IN: 05 - RBC Account",
+        "income_attributed": [
+            "E-TRANSFER ***dUh"
+        ]
+    },
+    {
+        "classification": "IN: 06 - Earnings",
+        "income_attributed": []
+    },
+    {
+        "classification": "IN: 07 - Poker",
+        "income_attributed": []
+    }
+]
