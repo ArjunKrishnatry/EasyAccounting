@@ -5,7 +5,8 @@ from pydantic import BaseModel
 from typing import List
 import pandas as pd
 from fastapi import UploadFile, File, Body
-from classification_module import *  # Assuming classify.py is in the same directory
+from classification_module import *
+from data_display_module import *  # Assuming classify.py is in the same directory
 import io
 
 index = -1
@@ -93,6 +94,13 @@ def get_income_classification_options():
     options = [item["classification"] for item in income_data]
     print("income options selected")
     return {"options": sorted(options)}
+
+
+@app.post("/pivot-table")
+def sum_classifications(classifications: list = Body(...)):
+    summed_classifications = create_summed_classifications(classifications)
+    return summed_classifications
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

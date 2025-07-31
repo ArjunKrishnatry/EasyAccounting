@@ -4,7 +4,6 @@ import TableView from './components/TableView';
 import DataView from './components/DataView';
 import ClassificationSelector from './components/ClassificationSelector';
 import './App.css';
-import { parse } from 'papaparse';
 
 function App() {
   const [parsedData, setParsedData] = useState<any[]>([]);
@@ -39,7 +38,7 @@ function App() {
 
           <div className="right_container" style={{ display: 'flex', flexDirection: 'column', width: '80%' }}>
             <button onClick={() => setShowTableView(!showTableView)}>
-              Switch Component
+              Switch Views
             </button>
 
             {showClassifier ? (
@@ -55,7 +54,7 @@ function App() {
                 </div>
               ) : (
                 <div className="min-h-[300px]">
-                  <DataView />
+                  <DataView data={parsedData}/>
                 </div>
               )
             )}
