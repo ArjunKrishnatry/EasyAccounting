@@ -11,6 +11,7 @@ def create_summed_classifications(data):
 
     for item in expense_data:
         classification_totals[item["classification"]] = {"expense": 0, "income": 0}
+        
 
     for item in income_data:
         if item["classification"] not in classification_totals:

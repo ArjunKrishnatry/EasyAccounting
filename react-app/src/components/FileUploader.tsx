@@ -4,25 +4,25 @@ import api from "../api";
 type UploadStatus = 'idle' | 'uploading' | 'success' | 'error';
 
 interface FileUploaderProps {
-  setParsedData: (data: any[]) => void;
-  setShowOrganized: (show: boolean) => void;
-  setShowClassifier: (show: boolean) => void;
-  setCurrentIndex: (idx: number | null) => void;
-  setRemaningClassifications: (data: any[]) => void;// <-- Add this
+    setParsedData: (data: any[], fileId?: string) => void;
+    setShowOrganized: (show: boolean) => void;
+    setShowClassifier: (show: boolean) => void;
+    setCurrentIndex: (idx: number | null) => void;
+    setRemaningClassifications: (data: any[]) => void;
 }
 
-export default function FileUploader({ setParsedData, setShowOrganized, setShowClassifier, setCurrentIndex, setRemaningClassifications}: FileUploaderProps,) {
+export default function FileUploader({ setParsedData, setShowOrganized, setShowClassifier, setCurrentIndex, setRemaningClassifications }: FileUploaderProps,) {
     const [file, setFile] = useState<File | null>(null);
     const [status, setStatus] = useState<UploadStatus>('idle');
     const [uploadProgress, setUploadProgress] = useState(0);
 
     function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
-        if (e.target.files){
+        if (e.target.files) {
             setFile(e.target.files[0]);
         }
     }
 
-   async function handleFileUpload() {
+    async function handleFileUpload() {
         if (!file) return;
 
         setStatus('uploading');
@@ -48,7 +48,8 @@ export default function FileUploader({ setParsedData, setShowOrganized, setShowC
             setUploadProgress(100);
 
             if (response.data && response.data.parsed) {
-                setParsedData(response.data.parsed);
+                // Pass both the parsed data and fileId to parent
+                setParsedData(response.data.parsed, response.data.fileId);
 
                 // Set remaningclassifications from backend response
                 if (Array.isArray(response.data.rem_class)) {
@@ -76,11 +77,11 @@ export default function FileUploader({ setParsedData, setShowOrganized, setShowC
         };
     }
 
-    return(
+    return (
         <div className='space-y-4'>
 
             <label>Upload Financial Data  </label>
-            <input type="file" accept=".csv" onChange={handleFileChange}/>
+            <input type="file" accept=".csv" onChange={handleFileChange} />
 
 
             {status === 'uploading' && (

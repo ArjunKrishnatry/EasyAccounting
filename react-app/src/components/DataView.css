@@ -1,4 +1,4 @@
-/* DataView Component Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 .data-view-container {
     display: grid;
@@ -6,82 +6,88 @@
     gap: 1.5rem;
     padding: 1rem;
     height: 100vh;
-    background-color: #000000;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Charts Container */
 .charts-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border: 1px solid #718096;
 }
 
 .chart-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
     text-align: center;
     transition: transform 0.2s ease;
+    border: 1px solid #4a5568;
 }
 
 .chart-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .chart-title {
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #374151;
+    margin-bottom: 1rem;
+    color: #f7fafc;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Table Container */
 .table-container {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border: 1px solid #718096;
 }
 
 .table-header {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    color: #374151;
+    margin-bottom: 1.5rem;
+    color: #f7fafc;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .table-wrapper {
     overflow-x: auto;
     border-radius: 8px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #4a5568;
+    background: #1a202c;
 }
 
 .data-table {
     width: 100%;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .data-table thead {
-    background-color: #f9fafb;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
 }
 
 .data-table th {
-    padding: 0.75rem;
+    padding: 1rem 0.75rem;
     text-align: left;
     font-weight: 600;
-    color: #374151;
-    border-bottom: 1px solid #e5e7eb;
+    color: #f7fafc;
+    border-bottom: 2px solid #4a5568;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .data-table th:last-child,
@@ -90,19 +96,45 @@
 }
 
 .data-table td {
-    padding: 0.75rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
+    padding: 1rem 0.75rem;
+    border-bottom: 1px solid #2d3748;
+    color: #e2e8f0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .data-table tbody tr:hover {
-    background-color: #f9fafb;
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
 }
 
 .data-table tbody tr:last-child {
+    font-weight: 700;
+    color: #f7fafc;
+    background: linear-gradient(135deg, #744210 0%, #8b4513 100%);
+}
+
+.custom-tooltip {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid #d69e2e;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tooltip-label {
     font-weight: 600;
-    color: #374151;
-    background-color: #f9fafb;
+    color: #f7fafc;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tooltip-value {
+    font-weight: 700;
+    color: #d69e2e;
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Responsive Design */
@@ -128,10 +160,19 @@
     }
 
     .chart-card {
-        padding: 0.75rem;
+        padding: 1rem;
     }
 
     .table-container {
-        padding: 0.75rem;
+        padding: 1rem;
+    }
+
+    .data-table {
+        font-size: 0.8rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.75rem 0.5rem;
     }
 }

@@ -94,19 +94,61 @@ def addnewClassification(classification, activity, type):
         with open("income_classification.json", "r") as f:
             data = json.load(f)
         
-        new_block = {"classification":classification, "income_attributed": [activity]}
+        # Find the next available number for income classifications
+        existing_numbers = []
+        for item in data:
+            if item["classification"].startswith("IN: "):
+                try:
+                    # Extract number from "IN: XX - Classification"
+                    num_part = item["classification"].split(" - ")[0].split("IN: ")[1]
+                    if num_part.isdigit():
+                        existing_numbers.append(int(num_part))
+                except:
+                    continue
+        
+        # Find the next available number
+        next_number = 1
+        if existing_numbers:
+            next_number = max(existing_numbers) + 1
+        
+        # Format the new classification name
+        new_classification_name = f"IN: {next_number:02d} - {classification}"
+        
+        new_block = {"classification": new_classification_name, "income_attributed": [activity]}
         data.append(new_block)
 
-        with open("income_classification.json", "w", encoding="utf-8") as f:
+        with open("income_classification.json", "w") as f:
             json.dump(data, f, indent=4)
     else:
         with open("expense_classification.json", "r") as f:
             data = json.load(f)
         
-        new_block = {"classification":classification, "expenses_attributed": [activity]}
+        # Find the next available number for expense classifications
+        existing_numbers = []
+        for item in data:
+            try:
+                # Extract number from "XX - Classification" or "XXA - Classification"
+                num_part = item["classification"].split(" - ")[0]
+                if num_part.isdigit():
+                    existing_numbers.append(int(num_part))
+                elif len(num_part) > 2 and num_part[:-1].isdigit() and num_part[-1].isalpha():
+                    # Handle cases like "05A" - extract "05"
+                    existing_numbers.append(int(num_part[:-1]))
+            except:
+                continue
+        
+        # Find the next available number
+        next_number = 1
+        if existing_numbers:
+            next_number = max(existing_numbers) + 1
+        
+        # Format the new classification name
+        new_classification_name = f"{next_number:02d} - {classification}"
+        
+        new_block = {"classification": new_classification_name, "expenses_attributed": [activity]}
         data.append(new_block)
 
-        with open("expense_classification.json", "w", encoding="utf-8") as f:
+        with open("expense_classification.json", "w") as f:
             json.dump(data, f, indent=4)
 
 

@@ -1,18 +1,78 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FileUploader from './components/FileUploader';
 import TableView from './components/TableView';
 import DataView from './components/DataView';
 import ClassificationSelector from './components/ClassificationSelector';
+import SideTable from './components/SideTable';
+import api from './api';
 import './App.css';
+
+interface FileRecord {
+  id: string;
+  filename: string;
+  uploadDate: string;
+  totalRecords: number;
+  totalExpense: number;
+  totalIncome: number;
+}
+
+interface FolderRecord {
+  id: string;
+  type: 'folder';
+  name: string;
+  createdDate: string;
+  files: FileRecord[];
+}
+
+type FileOrFolder = FileRecord | FolderRecord;
 
 function App() {
   const [parsedData, setParsedData] = useState<any[]>([]);
   const [showTableView, setShowTableView] = useState(true);
   const [showClassifier, setShowClassifier] = useState(false);
-  const [showOrganized, setShowOrganized]= useState(false);
+  const [showOrganized, setShowOrganized] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [remaningclassifications, setRemaningClassifications] = useState<any[]>([]);
+  const [uploadedFiles, setUploadedFiles] = useState<FileOrFolder[]>([]);
+  const [selectedFileId, setSelectedFileId] = useState<string | null>(null);
 
+  // Load stored files on component mount
+  useEffect(() => {
+    loadStoredFiles();
+  }, []);
+
+  const loadStoredFiles = async () => {
+    try {
+      const response = await api.get('/stored-files');
+      console.log('Loaded files:', response.data); // Debug log
+      setUploadedFiles(response.data);
+    } catch (error) {
+      console.error('Error loading stored files:', error);
+    }
+  };
+
+  const handleFileSelect = async (fileId: string) => {
+    try {
+      const response = await api.get(`/file-data/${fileId}`);
+      if (response.data.data) {
+        setParsedData(response.data.data);
+        setSelectedFileId(fileId);
+        setShowClassifier(false);
+        setShowOrganized(false);
+      }
+    } catch (error) {
+      console.error('Error loading file data:', error);
+    }
+  };
+
+  const handleFileUpload = async (fileData: any, fileId?: string) => {
+    setParsedData(fileData);
+    if (fileId) {
+      setSelectedFileId(fileId);
+    }
+    // Reload the file list to show the new file
+    await loadStoredFiles();
+  };
 
   return (
     <div className="App min-h-screen w-screen bg-gray-900 text-white flex flex-col">
@@ -22,7 +82,7 @@ function App() {
       <main className="flex-grow flex flex-col items-center justify-center p-4">
         <div className="uploader-container w-full flex justify-center">
           <FileUploader
-            setParsedData={setParsedData}
+            setParsedData={handleFileUpload}
             setShowOrganized={setShowOrganized}
             setShowClassifier={setShowClassifier}
             setCurrentIndex={setCurrentIndex}
@@ -32,8 +92,12 @@ function App() {
 
         <div className="main-flex-container">
           <div className="side-container">
-            <h2>Previous Months</h2>
-            <p>Put dropdown of different years</p>
+            <SideTable
+              uploadedFiles={uploadedFiles}
+              onFileSelect={handleFileSelect}
+              selectedFileId={selectedFileId}
+              onRefresh={loadStoredFiles}
+            />
           </div>
 
           <div className="right_container" style={{ display: 'flex', flexDirection: 'column', width: '80%' }}>
@@ -43,10 +107,10 @@ function App() {
 
             {showClassifier ? (
               <ClassificationSelector
-              setShowClassifier={setShowClassifier}
-              RemainingClassifications = {remaningclassifications}
-              setParsedData = {setParsedData}
-              parsedData = {parsedData} />
+                setShowClassifier={setShowClassifier}
+                RemainingClassifications={remaningclassifications}
+                setParsedData={setParsedData}
+                parsedData={parsedData} />
             ) : (
               showTableView ? (
                 <div>
@@ -54,7 +118,7 @@ function App() {
                 </div>
               ) : (
                 <div className="min-h-[300px]">
-                  <DataView data={parsedData}/>
+                  <DataView data={parsedData} />
                 </div>
               )
             )}
