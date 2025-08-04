@@ -10,10 +10,11 @@ def create_summed_classifications(data):
     classification_totals = {}
 
     for item in expense_data:
-        classification_totals[item["classification"]] = 0
+        classification_totals[item["classification"]] = {"expense": 0, "income": 0}
 
     for item in income_data:
-        classification_totals[item["classification"]] = 0
+        if item["classification"] not in classification_totals:
+            classification_totals[item["classification"]] = {"expense": 0, "income": 0}
 
     # Process each row in the data
     for row in data:
@@ -23,11 +24,15 @@ def create_summed_classifications(data):
 
         if classification in classification_totals:
             if expense > 0:
-                classification_totals[classification] += expense
-            elif income > 0:
-                classification_totals[classification] += income
+                classification_totals[classification]["expense"] += expense
+            if income > 0:
+                classification_totals[classification]["income"] += income
 
-    # Convert to list of tuples
-    tupled_classifications = list(classification_totals.items())
+    # Convert to list of tuples: (classification, expense_sum, income_sum)
+    # Only include classifications that have non-zero values
+    tupled_classifications = []
+    for classification, totals in classification_totals.items():
+        if totals["expense"] > 0 or totals["income"] > 0:
+            tupled_classifications.append((classification, totals["expense"], totals["income"]))
 
     return tupled_classifications

@@ -47,7 +47,6 @@ async def upload_csv(file: UploadFile = File(...)):
 
 @app.post("/reclassify")
 async def reclassify(parsed: list = Body(...)):
-    import pandas as pd
     df = pd.DataFrame(parsed)
     df, _ = classify(df)  # This will use the updated JSON files
     parsed_data = df.to_dict(orient="records")
@@ -97,7 +96,7 @@ def get_income_classification_options():
 
 
 @app.post("/pivot-table")
-def sum_classifications(classifications: list = Body(...)):
+def sum_classifications(classifications: List = Body(...)):
     summed_classifications = create_summed_classifications(classifications)
     return summed_classifications
 
